@@ -1,0 +1,33 @@
+# .github/workflows/tests.yml
+# ============================================================
+# Lab 2 – Part B: Fill in this file together in class!
+#
+# YOUR TASKS (fill in every TODO below):
+#   1. Add the trigger so the workflow runs on every push
+#   2. Set the Python version to 3.11
+#   3. Add the step that installs dependencies (hint: there are none here!)
+#   4. Add the step that runs the tests
+#   5. Push → watch the CI results on the Actions tab
+# ============================================================
+
+name: Run Tests   # ← feel free to change this name
+
+on:
+  # TODO: add the event that triggers this workflow
+  #       (hint: we want it to run on every push to any branch)
+
+jobs:
+  test:
+    runs-on: ubuntu-latest   # use the latest Ubuntu runner
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4   # ← always needed first
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "TODO"   # ← which version should we use?
+
+      # TODO: add a step called "Run tests" that runs the unittest suite
+      #       hint: the command is  python -m unittest discover -v
